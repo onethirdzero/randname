@@ -11,6 +11,7 @@ go get github.com/onethirdzero/randname
 ## Usage
 
 ```bash
+# Assuming you have $GOPATH/bin added to your $PATH.
 $ randname
 > blurrycoral
 
