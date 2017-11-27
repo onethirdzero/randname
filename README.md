@@ -25,7 +25,7 @@ $ randname -d " "
 
 ## Wishlist
 
-- [ ] Make this a cli app
+- [x] Make this a cli app
 - [ ] Pull words from a public API
 - [ ] Add tests
 - [ ] Make camel case an option?
