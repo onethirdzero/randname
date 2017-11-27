@@ -6,3 +6,4 @@ Random name generator written in Go for practice. Inspired by [phobologic's vers
 
 - [ ] Make this a cli app
 - [ ] Pull words from a public API
+- [ ] Add tests
