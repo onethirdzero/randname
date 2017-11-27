@@ -14,7 +14,7 @@ func main() {
 
 	app := cli.NewApp()
 
-	app.Name = "randnamegen"
+	app.Name = "randname"
 	app.Usage = "Generate random names"
 
 	// Flags.
@@ -23,7 +23,7 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:        "delimiter, d",
-			Value:       "-",
+			Value:       "",
 			Usage:       "Delimiter used to separate the name words ",
 			Destination: &delimiter,
 		},
