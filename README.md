@@ -8,6 +8,20 @@ Random name generator written in Go for practice. Inspired by [phobologic's vers
 go get github.com/onethirdzero/randname
 ```
 
+## Usage
+
+```bash
+$ randname
+> blurrycoral
+
+# Short for --delimiter.
+$ randname -d .
+> pretty.sapphire
+
+$ randname -d " "
+> zippy rose
+```
+
 ## Wishlist
 
 - [ ] Make this a cli app
