@@ -4,11 +4,14 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"time"
 
 	cli "gopkg.in/urfave/cli.v1"
 )
 
 func main() {
+	rand.Seed(time.Now().UTC().UnixNano())
+
 	app := cli.NewApp()
 
 	app.Name = "randnamegen"
