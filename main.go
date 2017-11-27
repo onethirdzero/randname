@@ -14,12 +14,40 @@ func main() {
 	app.Name = "randnamegen"
 	app.Usage = "Generate random names"
 
+	// Flags.
+	var delimiter string
+
+	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:        "delimiter, d",
+			Value:       "-",
+			Usage:       "Delimiter used to separate the name words ",
+			Destination: &delimiter,
+		},
+	}
+
 	// The CLI app's main function.
 	app.Action = func(c *cli.Context) error {
-		adj := Adjectives[rand.Intn(len(Adjectives))]
-		noun := Colours[rand.Intn(len(Colours))]
+		var delim string
+		var adj string
+		var noun string
 
-		name := fmt.Sprintf("%s-%s", adj, noun)
+		if c.NArg() > 0 {
+			fmt.Print("This app does not accept arguments!\n")
+
+			return nil
+		}
+
+		if delimiter == "." || delimiter == "-" || delimiter == "_" || delimiter == " " {
+			delim = delimiter
+		} else {
+			fmt.Print("That delimiter is not allowed! Using the default.\n")
+		}
+
+		adj = Adjectives[rand.Intn(len(Adjectives))]
+		noun = Colours[rand.Intn(len(Colours))]
+
+		name := fmt.Sprintf("%s%s%s", adj, delim, noun)
 
 		fmt.Printf("%s\n", name)
 
