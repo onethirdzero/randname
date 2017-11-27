@@ -43,7 +43,7 @@ func main() {
 
 		if delimiter == "." || delimiter == "-" || delimiter == "_" || delimiter == " " {
 			delim = delimiter
-		} else {
+		} else if len(delimiter) > 0 {
 			fmt.Print("That delimiter is not allowed! Using the default.\n")
 		}
 
