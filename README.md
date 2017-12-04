@@ -29,4 +29,4 @@ $ randname -d " "
 - [ ] Pull words from a public API
 - [ ] Add tests
 - [ ] Make camel case an option?
-- [ ] Make this a proper Go package
+- [x] Make this a proper Go package
