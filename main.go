@@ -32,8 +32,6 @@ func main() {
 	// The CLI app's main function.
 	app.Action = func(c *cli.Context) error {
 		var delim string
-		var adj string
-		var noun string
 
 		if c.NArg() > 0 {
 			fmt.Print("This app does not accept arguments!\n")
@@ -47,10 +45,7 @@ func main() {
 			fmt.Print("That delimiter is not allowed! Using the default.\n")
 		}
 
-		adj = Adjectives[rand.Intn(len(Adjectives))]
-		noun = Colours[rand.Intn(len(Colours))]
-
-		name := fmt.Sprintf("%s%s%s", adj, delim, noun)
+		name := Generate(delim)
 
 		fmt.Printf("%s\n", name)
 
@@ -58,4 +53,14 @@ func main() {
 	}
 
 	app.Run(os.Args)
+}
+
+// Generate produces a name using a random adjective and noun.
+// delim is added as a delimiter between words.
+func Generate(delim string) string {
+	adj := Adjectives[rand.Intn(len(Adjectives))]
+	noun := Colours[rand.Intn(len(Colours))]
+
+	return fmt.Sprintf("%s%s%s", adj, delim, noun)
+
 }
