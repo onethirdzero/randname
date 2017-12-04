@@ -34,6 +34,6 @@ func GenerateCamelCase(delim string) string {
 	titledAdj := strings.Title(string(adj))
 	titledNoun := strings.Title(string(noun))
 
-	return fmt.Sprintf("%s%s%s", titledAdj, titledNoun, noun)
+	return fmt.Sprintf("%s%s%s", titledAdj, delim, titledNoun)
 
 }
