@@ -21,6 +21,10 @@ $ randname -d .
 
 $ randname -d " "
 > zippy rose
+
+# Short for --camelcase.
+$ randname -c
+> MuzzyLilac
 ```
 
 ## Wishlist
