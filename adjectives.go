@@ -1,4 +1,4 @@
-package main
+package randname
 
 // Adjectives provides adjective words for main.go.
 // Pulled from https://github.com/phobologic/random_name/blob/master/random_name/dictionaries/adjectives.py.

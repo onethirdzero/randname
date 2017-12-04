@@ -2,16 +2,13 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"os"
-	"time"
 
+	"github.com/onethirdzero/randname"
 	cli "gopkg.in/urfave/cli.v1"
 )
 
 func main() {
-	rand.Seed(time.Now().UTC().UnixNano())
-
 	app := cli.NewApp()
 
 	app.Name = "randname"
@@ -45,7 +42,7 @@ func main() {
 			fmt.Print("That delimiter is not allowed! Using the default.\n")
 		}
 
-		name := Generate(delim)
+		name := randname.Generate(delim)
 
 		fmt.Printf("%s\n", name)
 
@@ -53,14 +50,4 @@ func main() {
 	}
 
 	app.Run(os.Args)
-}
-
-// Generate produces a name using a random adjective and noun.
-// delim is added as a delimiter between words.
-func Generate(delim string) string {
-	adj := Adjectives[rand.Intn(len(Adjectives))]
-	noun := Colours[rand.Intn(len(Colours))]
-
-	return fmt.Sprintf("%s%s%s", adj, delim, noun)
-
 }
