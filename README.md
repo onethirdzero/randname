@@ -5,7 +5,7 @@ Random name generator written in Go for practice. Inspired by [phobologic's vers
 ## Installation
 
 ```go
-go get github.com/onethirdzero/randname
+$ go get github.com/onethirdzero/randname
 ```
 
 ## Usage
@@ -29,3 +29,4 @@ $ randname -d " "
 - [ ] Pull words from a public API
 - [ ] Add tests
 - [ ] Make camel case an option?
+- [ ] Make this a proper Go package
