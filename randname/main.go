@@ -16,19 +16,26 @@ func main() {
 
 	// Flags.
 	var delimiter string
+	var camelCase bool
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:        "delimiter, d",
 			Value:       "",
-			Usage:       "Delimiter used to separate the name words ",
+			Usage:       "Delimiter used to separate the name words",
 			Destination: &delimiter,
+		},
+		cli.BoolFlag{
+			Name:        "camelcase, c",
+			Usage:       "Return a camel case name instead of a lower case name",
+			Destination: &camelCase,
 		},
 	}
 
 	// The CLI app's main function.
 	app.Action = func(c *cli.Context) error {
 		var delim string
+		var name string
 
 		if c.NArg() > 0 {
 			fmt.Print("This app does not accept arguments!\n")
@@ -42,7 +49,11 @@ func main() {
 			fmt.Print("That delimiter is not allowed! Using the default.\n")
 		}
 
-		name := randname.Generate(delim)
+		if camelCase {
+			name = randname.GenerateCamelCase(delim)
+		} else {
+			name = randname.GenerateLowerCase(delim)
+		}
 
 		fmt.Printf("%s\n", name)
 
