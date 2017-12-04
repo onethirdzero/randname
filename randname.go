@@ -3,6 +3,7 @@ package randname
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 	"time"
 )
 

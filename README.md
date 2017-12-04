@@ -28,5 +28,5 @@ $ randname -d " "
 - [x] Make this a cli app
 - [ ] Pull words from a public API
 - [ ] Add tests
-- [ ] Make camel case an option?
+- [x] Make camel case an option?
 - [x] Make this a proper Go package
